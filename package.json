@@ -1,0 +1,38 @@
+{
+    "name": "polar-oh1-sdk---nodejs",
+    "version": "1.0.0",
+    "description": "A simple sdk implmentation for connectivity with polar oh1 in nodejs with bluetooth.",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build && node build/index.js",
+        "start:dev": "nodemon",
+        "build": "rimraf ./build && tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/carlosbajo/Polar-OH1-SDK---Nodejs.git"
+    },
+    "author": "Carlos Bajo && Karen González",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/carlosbajo/Polar-OH1-SDK---Nodejs/issues"
+    },
+    "homepage": "https://github.com/carlosbajo/Polar-OH1-SDK---Nodejs#readme",
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true
+    },
+    "devDependencies": {
+        "@types/node": "13.7.1",
+        "nodemon": "2.0.2",
+        "rimraf": "3.0.2",
+        "ts-node": "8.6.2",
+        "typescript": "3.7.5"
+    },
+    "dependencies": {
+        "@abandonware/noble": "1.9.2-5",
+        "nano-time": "^1.0.0",
+        "rxjs": "^6.5.3"
+    }
+}
