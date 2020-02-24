@@ -1,3 +1,8 @@
+// @ts-ignore
+import Noble from '@abandonware/noble';
+import Oh1 from './Oh1';
+import Constants from '../constants';
+
 // import Noble from '@abandonware/noble';
 export default class Device {
     name: string;
@@ -20,7 +25,13 @@ export default class Device {
         this.nobleDevice = nobleDevice;
     }
 
-    generateConnection(): boolean {
-        return false;
+    public Connect(
+        scanTimeout: number = Constants.SCAN_TIMEOUT
+    ): Promise<boolean> {
+        return new Promise(() => {});
+    }
+
+    disconnect(): boolean {
+        return true;
     }
 }

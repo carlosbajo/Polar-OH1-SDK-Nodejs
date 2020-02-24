@@ -1,7 +1,12 @@
-import DeviceBrowser from './models/DeviceBrowser';
+import DeviceManager from './models/DeviceManager';
 
 async function main() {
-    const deviceBrowser = new DeviceBrowser();
-    const device = await deviceBrowser.ConnectToDevice();
+    try {
+        const dmanager = new DeviceManager();
+        const oh1Device = await dmanager.DeviceOH1();
+        await oh1Device.Connect();
+    } catch (e) {
+        console.log('Error ocurred');
+    }
 }
 main();
