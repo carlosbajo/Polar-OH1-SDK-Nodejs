@@ -8,33 +8,18 @@ The library uses Rxjs to stream the data from the band, so the library implement
 
 # Typescript example
 
-```Typescript
-import DeviceManager from './models/DeviceManager';
-import Oh1 from './models/Oh1';
+```javascript
+const { deviceManager } = require('polar-oh1-sdk');
 
-async function main() {
-    try {
-        const dmanager = new DeviceManager();
-        const oh1Device: Oh1 = await dmanager.DeviceOH1();
-        const result: boolean = await oh1Device.Connect();
-
-        if (result) {
-            const { hr, ppg } = await oh1Device.streamPPG();
-
-            hr.subscribe(sample => {
-                console.log(sample);
-            });
-
-            ppg.subscribe({
-                next: data => {
-                    console.log(data);
-                }
-            });
-        }
-    } catch (e) {
-        console.log(e);
-        console.log('Error ocurred');
-    }
-}
-main();
+(async function main() {
+    // Device address, you can get this from some bluetooth scan
+    const oh1 = await deviceManager.DeviceOH1('a0-9e-1a-23-ac-d0');
+    // Connect to the device you can pass timeout to the connect function: default 5s
+    // await oh1.Connect(5000)
+    await oh1.Connect();
+    // Stream function returns two Observable objects in this case, for oh1 hr and ppg
+    const { hr, ppg } = await oh1.Stream();
+    hr.subscribe(data => {});
+    ppg.subscribe(data => {});
+})();
 ```
