@@ -16,6 +16,9 @@
         // "outFile": "./",                       /* Concatenate and emit output to single file. */
         "outDir": "build" /* Redirect output structure to the directory. */,
         "rootDir": "lib" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
         // "composite": true,                     /* Enable project compilation */
         // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
         // "removeComments": true,                /* Do not emit comments to output. */
