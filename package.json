@@ -33,7 +33,6 @@
     },
     "dependencies": {
         "@abandonware/noble": "1.9.2-5",
-        "keypress": "^0.2.1",
         "nano-time": "^1.0.0",
         "rxjs": "^6.5.3"
     }
