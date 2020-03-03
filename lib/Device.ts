@@ -1,5 +1,5 @@
 // @ts-ignore
-import Constants from '../constants';
+import Constants from './constants';
 
 export default class Device {
     name: string;
